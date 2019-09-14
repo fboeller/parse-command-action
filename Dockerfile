@@ -1,3 +1,4 @@
-FROM alpine:3.10
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+FROM python:3
+ADD entrypoint.py /
+RUN pip install docopt
+CMD ["python", "./entrypoint.py"]

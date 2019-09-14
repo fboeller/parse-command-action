@@ -4,15 +4,17 @@ inputs:
   command:
     description: 'The string that should be parsed'
     required: true
-  docopt:
+  specification:
     description: 'A full docopt string describing the command that is expected'
     required: true
 outputs:
   arguments:
     description: 'The parsed arguments'
+  valid:
+    description: 'true, if the command matches the specification, false, if it could not be parsed'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.docopt }}
+    - ${{ inputs.specification }}
     - ${{ inputs.command }}
