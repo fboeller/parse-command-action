@@ -1,5 +1,5 @@
 FROM python:3
-ADD entrypoint.py /
-WORKDIR /
+WORKDIR /action
+ADD entrypoint.py .
 RUN pip install docopt
-CMD ["python", "entrypoint.py"]
+ENTRYPOINT ["python", "./entrypoint.py"]
