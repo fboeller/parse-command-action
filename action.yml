@@ -16,5 +16,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - python
+    - ./entrypoint.py
     - ${{ inputs.specification }}
     - ${{ inputs.command }}
