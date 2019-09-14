@@ -17,6 +17,6 @@ runs:
   image: 'Dockerfile'
   args:
     - python
-    - ./entrypoint.py
+    - entrypoint.py
     - ${{ inputs.specification }}
     - ${{ inputs.command }}
