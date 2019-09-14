@@ -1,0 +1,15 @@
+name: Test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: fboeller/parse-command-action@master
+      id: command
+      with:
+        command: '--verbose --version'
+        specification: 'Usage: e2e [--verbose] [--version]'
+    - name: Output valid
+      run: echo "${{ steps.command.outputs.valid }}"
+    - name: Output arguments
+      run: echo "${{ steps.command.outputs.arguments }}"
