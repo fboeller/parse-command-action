@@ -12,4 +12,4 @@ jobs:
     - name: Output valid
       run: echo "${{ steps.command.outputs.valid }}"
     - name: Output arguments
-      run: echo "${{ steps.command.outputs.arguments }}"
+      run: echo "${{ steps.command.outputs.arguments['--version'] }}"
